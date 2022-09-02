@@ -1,8 +1,9 @@
 body{
-    background-color: aquamarine;
+    background-color: aquamarine;  
 }
 
 #container{
+    background-color: white;
     display: flex;
     flex-direction: column;
     border: 2px solid darkslategrey;
@@ -12,6 +13,9 @@ body{
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
+    margin-top: 50px;
+    padding-bottom: 30px;
+    filter: drop-shadow(0 5px 0.5rem black) ;
     
 }
 
