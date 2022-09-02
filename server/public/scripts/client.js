@@ -1,5 +1,15 @@
 $(document).ready(handleReady);
 
 function handleReady() {
- console.log('We are good!');
+ $('#submitButton').on('click', sendNumbersToServer)
+ $('#clearButton').on('click', clearInputs)
+}
+
+function sendNumbersToServer (){
+    console.log('click me');
+}
+
+function clearInputs (){
+    $('#num1').val('');
+    $('#num2').val('');
 }
