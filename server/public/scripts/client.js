@@ -6,7 +6,14 @@ function handleReady() {
 }
 
 function sendNumbersToServer (){
-    console.log('click me');
+    let mathObject = {
+        input1: $('#num1').val(), //currently strings
+        input2: $('#num2').val(),
+        //how to do operator?
+    }
+    console.log(mathObject);
+    $('#num1').val('');
+    $('#num2').val('');
 }
 
 function clearInputs (){
