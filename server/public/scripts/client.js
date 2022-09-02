@@ -18,10 +18,18 @@ function sendNumbersToServer (){
         input2: $('#num2').val(),
         
     }
-    console.log(mathObject);
+    console.log('original object sent to server',mathObject);
     $('#num1').val('');
     $('#num2').val('');
-    resetCalculator(); 
+    resetCalculator();
+    //POST route to server below
+    $.ajax({
+        method: 'POST',
+        url: '/calculations',
+        data: mathObject,
+      }).then(function (response){
+        // console.log(response);
+      }) 
 }
 
 function plusSelected (){
@@ -29,7 +37,7 @@ function plusSelected (){
     $('#minusButton').prop('disabled', true);
     $('#multiplyButton').prop('disabled', true);
     $('#divideButton').prop('disabled', true);
-    console.log(operator);
+    // console.log(operator);
 }
 
 
@@ -38,7 +46,7 @@ function minusSelected (){
     $('#plusButton').prop('disabled', true);
     $('#multiplyButton').prop('disabled', true);
     $('#divideButton').prop('disabled', true);
-    console.log(operator);
+    // console.log(operator);
 }
 
 function multiplySelected (){
@@ -46,7 +54,7 @@ function multiplySelected (){
     $('#plusButton').prop('disabled', true);
     $('#minusButton').prop('disabled', true);
     $('#divideButton').prop('disabled', true);
-    console.log(operator);
+//     console.log(operator);
 }
 
 function divideSelected (){
@@ -54,7 +62,7 @@ function divideSelected (){
     $('#plusButton').prop('disabled', true);
     $('#minusButton').prop('disabled', true);
     $('#divideButton').prop('disabled', true);
-    console.log(operator);
+    // console.log(operator);
 }
 
 
