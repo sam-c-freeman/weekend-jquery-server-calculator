@@ -89,11 +89,12 @@ function getCalculations (){
         method: 'GET',
         url: '/calculations'
       }).then(function(calculations){
-        
-        // $('#answerOutput').empty();
-        // $('#answerOutput').text(calculations[0][answer]);
-        
-        console.log(calculations.values());
+        $('#answerOutput').empty();
+        $('#answerOutput').text(calculations[calculations.length-1].answer);
+        $('#history').empty();
+        for(let i =0; i<calculations.length; i++){
+            $('#history').append(`<li>${calculations[i].input1} ${calculations[i].operator} ${calculations[i].input2} = ${calculations[i].answer}`)
+        }
       })
     }
 
