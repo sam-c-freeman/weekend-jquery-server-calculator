@@ -23,6 +23,10 @@ app.post('/calculations', (req,res) => {
   res.sendStatus(200);
 })
 
+app.get('/calculations', (req,res)=>{
+  res.send(calculations);
+})
+
 
 //struggling to add mathObject.answer permanently
 

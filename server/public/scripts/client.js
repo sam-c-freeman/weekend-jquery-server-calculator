@@ -10,6 +10,7 @@ function handleReady() {
 }
 
 let operator;
+// let clientSideCalculations = [];
 
 function sendNumbersToServer (){
     let mathObject = {
@@ -28,7 +29,8 @@ function sendNumbersToServer (){
         url: '/calculations',
         data: mathObject,
       }).then(function (response){
-        // console.log(response);
+        console.log(response);
+        getCalculations();
       }) 
 }
 
@@ -81,5 +83,20 @@ function clearInputs (){
     $('#multiplyButton').prop('disabled', false);
     $('#divideButton').prop('disabled', false);
 }
+
+function getCalculations (){
+    $.ajax({
+        method: 'GET',
+        url: '/calculations'
+      }).then(function(calculations){
+        
+        // $('#answerOutput').empty();
+        // $('#answerOutput').text(calculations[0][answer]);
+        
+        console.log(calculations.values());
+      })
+    }
+
+//why can't I access what is sent back?
 
 //do I need to reset operator between calculations?
