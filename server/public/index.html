@@ -11,23 +11,40 @@
 </head>
 <body>
     <main id="container">
-        <h1>Server Side Calculator</h1>
-        <section id="calcArea">
-            <input id="num1" type="number" placeholder="#">
-            <button id="plusButton">+</button>
-            <button id="minusButton">-</button>
-            <button id="multiplyButton">x</button>
-            <button id="divideButton">/</button>
-            <input id="num2" type="number" placeholder="#">
-            <button id="submitButton">=</button>
-            <button id="clearButton">c</button>
-     </section>
-     <section id="answer">
-        <h2 id="answerOutput"></h3>
-     </section>
+        <!-- <h1>Server Side Calculator</h1> -->
+       <section id="blank1"></section>
+        <div class="calculator-body" id="calculator-bodyID">
+            <div class="output">
+                <div class="previous-calculation">123 +</div>
+                <div class="current-calculation">45</div>
+            </div>
+            <button class="ac-button">AC</button>
+            <button>DEL</button>
+            <button>÷</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>x</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>+</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>-</button>
+            <button>.</button>
+            <button>0</button>
+            <button class="equals-button">=</button>
+        </div>
+     <!-- <section id="answer">
+        <h2 id="answerOutput"> Hello</h2>
+     </section> -->
      <section id="calcHistory">
        <ul id="history"></ul>
      </section>
+     <section id="blank">
+    </section>
     </main>
 </body>
 </html>

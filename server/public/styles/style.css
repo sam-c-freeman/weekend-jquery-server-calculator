@@ -1,8 +1,78 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family:monospace, sans-serif;
+}
+
 body{
-    background-color: aquamarine;  
+    background-color: darkslategrey;  
+    padding: 0;
+    margin: 0;
 }
 
 #container{
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas:"blank1 calculator-body calcHistory blank";
+    grid-template-columns: .25fr 1fr 1fr .25fr;
+    grid-template-rows: auto;
+    
+}
+
+#blank1{
+    grid-area: blank1;
+}
+
+.calculator-body{
+    display: grid;
+    justify-content: left;
+    align-content: center;
+    
+    margin: 50px; 
+    /* unsure if I wasnt 100vh because I need to put results somewhere */
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-area: calculator-body;
+}
+
+/* .output{
+    border-radius: 5px;
+} */
+
+.calculator-body > button{
+    font-size: 1.5rem;
+    border: 3px solid black;
+    /* border-radius: 5px; */
+    outline: none;
+    
+}
+
+.calculator-body > button:hover{
+    background-color: gray;
+    color: white;
+    
+}
+
+.ac-button, .equals-button{
+    grid-column: span 2;
+}
+
+.output{
+    grid-column: 1/ -1;
+    background-color: black;
+    color: greenyellow;
+}
+
+#calcHistory{
+    background-color: aquamarine;
+    grid-area: calcHistory;
+    margin: 50px;
+}
+
+#blank{
+    grid-area: blank;
+}
+
+/* #container{
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -36,4 +106,4 @@ input{
 
 h2{
     margin-top: 0px;
-}
+} */
