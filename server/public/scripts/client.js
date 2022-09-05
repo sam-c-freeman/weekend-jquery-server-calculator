@@ -16,6 +16,7 @@ let mathObject;
 function clearAll () {
     digits = [];
     $('.previous-calculation').text('');
+    $('.current-calculation').text('');
 }
 
 function deleteOne (){
@@ -79,19 +80,34 @@ function getCaculationData (){
 }
 
 function sendToSever () {
+    digits = [];
     $('.previous-calculation').text('');
     $.ajax({
                 method: 'POST',
                 url: '/calculations',
                 data: mathObject,
-              })
-            //   .then(function (response){
-//                 console.log(response);
-//                 getCalculations();
-//               }) 
+              }).then(function (response){
+                console.log(response);
+                getCalculations();
+              }) 
 }
 
-//below is not working for checking for all inputs
+
+function getCalculations (){
+        $.ajax({
+            method: 'GET',
+            url: '/calculations'
+          }).then(function(calculations){
+            $('.current-calculation').empty();
+            $('.current-calculation').text(calculations[calculations.length-1].answer);
+            $('#history').empty();
+            for(let i =0; i<calculations.length; i++){
+                $('#history').append(`<li>${calculations[i].firstOperator} ${calculations[i].operation} ${calculations[i].secondOperator} = ${calculations[i].answer}`)
+            }
+          })
+        }
+
+//below is not working for checking for all inputs (stretch)
 
 // function checkForEquation (){
 //     if(mathObject[firstOperator] === undefined || mathObject[secondOperator] === undefined){
