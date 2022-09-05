@@ -35,17 +35,30 @@ app.get('/calculations', (req,res)=>{
 //calculation function below
 
 function doCalculations (){
-  if(mathObject.operator === '+'){
-  return Number(mathObject.input1) + Number(mathObject.input2);
-  } else if (mathObject.operator === '-') {
-    return Number(mathObject.input1) - Number(mathObject.input2);
-  } else if (mathObject.operator === 'x') {
-    return Number(mathObject.input1) * Number(mathObject.input2);
+  if(mathObject.operation === '+'){
+  return Number(mathObject.firstOperator) + Number(mathObject.secondOperator);
+  } else if (mathObject.operation === '-') {
+    return Number(mathObject.firstOperator) - Number(mathObject.secondOperator);
+  } else if (mathObject.operation === '*') {
+    return Number(mathObject.firstOperator) * Number(mathObject.secondOperator);
   } else {
-    return Number(mathObject.input1) / Number(mathObject.input2);
+    return Number(mathObject.firstOperator) / Number(mathObject.secondOperator);
   }
   // console.log(mathObject);
 }
+
+// function doCalculations (){
+//   if(mathObject.operator === '+'){
+//   return Number(mathObject.input1) + Number(mathObject.input2);
+//   } else if (mathObject.operator === '-') {
+//     return Number(mathObject.input1) - Number(mathObject.input2);
+//   } else if (mathObject.operator === 'x') {
+//     return Number(mathObject.input1) * Number(mathObject.input2);
+//   } else {
+//     return Number(mathObject.input1) / Number(mathObject.input2);
+//   }
+//   // console.log(mathObject);
+// }
 
 console.log(calculations);
 

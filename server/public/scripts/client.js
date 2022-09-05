@@ -5,9 +5,13 @@ function handleReady (){
     $('.button').on('click', getCaculationData);
     $('#ac-button').on('click', clearAll);
     $('#del').on('click', deleteOne);
+    $('#equals-button').on('click', sendToSever);
 }
 
-let digits = []
+let digits = [];
+let firstOperator;
+let secondOperator;
+let mathObject;
 
 function clearAll () {
     digits = [];
@@ -22,10 +26,9 @@ function deleteOne (){
 }
 
 function getCaculationData (){
-    // let operators = ['+', '-', '*', '/']
-    let firstOperator;
-    let secondOperator;
-    let mathObject;
+    // let firstOperator;
+    // let secondOperator;
+    // let mathObject;
     let buttonClicked = $(this).attr('id');
     digits.push(buttonClicked);
     let joinedDigits = digits.join('');
@@ -74,6 +77,27 @@ function getCaculationData (){
     
    
 }
+
+function sendToSever () {
+    $('.previous-calculation').text('');
+    $.ajax({
+                method: 'POST',
+                url: '/calculations',
+                data: mathObject,
+              })
+            //   .then(function (response){
+//                 console.log(response);
+//                 getCalculations();
+//               }) 
+}
+
+//below is not working for checking for all inputs
+
+// function checkForEquation (){
+//     if(mathObject[firstOperator] === undefined || mathObject[secondOperator] === undefined){
+//         $('.previous-calculation').text('Please start over and enter two numbers!');
+//     }
+// }
 
 
 //original base made below
