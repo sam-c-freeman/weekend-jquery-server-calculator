@@ -6,6 +6,7 @@ function handleReady (){
     $('#ac-button').on('click', clearAll);
     $('#del').on('click', deleteOne);
     $('#equals-button').on('click', sendToSever);
+    // $('#equals-button').on('click', checkForEquation);
 }
 
 let digits = [];
@@ -108,12 +109,14 @@ function getCalculations (){
         }
 
 //below is not working for checking for all inputs (stretch)
-
-// function checkForEquation (){
-//     if(mathObject[firstOperator] === undefined || mathObject[secondOperator] === undefined){
-//         $('.previous-calculation').text('Please start over and enter two numbers!');
-//     }
-// }
+//if the user enters a number, an operation and then equals is does work
+//I took this back out because it was not working as expected when I put the code 
+//into the flow of functions
+function checkForEquation (){
+    if(mathObject.firstOperator === '' || mathObject.secondOperator === '' || mathObject.operation === undefined || mathObject === undefined){
+        $('.previous-calculation').text('Please start over and enter two numbers!');
+    }
+}
 
 
 //original base made below
