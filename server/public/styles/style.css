@@ -52,7 +52,21 @@ body{
     
 }
 
-.ac-button, .equals-button{
+.previous-calculation{
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.current-calculation{
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 2.5rem;
+}
+
+#ac-button, #equals-button{
     grid-column: span 2;
 }
 
