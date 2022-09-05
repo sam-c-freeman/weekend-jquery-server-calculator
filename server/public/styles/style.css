@@ -32,6 +32,7 @@ body{
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
     grid-area: calculator-body;
+    
 }
 
 /* .output{
@@ -96,38 +97,33 @@ li{
     margin: 5px;
 }
 
-/* #container{
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid darkslategrey;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 50px;
-    padding-bottom: 30px;
-    filter: drop-shadow(0 5px 0.5rem black) ;
+
+@media only screen and (max-width: 600px) {
+#container{
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "calculator-body" 
+    "calcHistory";
     
+    }
+    .calculator-body{
+        grid-area: calculator-body;
+        margin-bottom: 20px;
+      
+    }
+
+    /* #blank1{
+        grid-area: blank1;
+    } */
+    #calcHistory{
+        max-width: 400px;
+        grid-area: calcHistory;
+        margin-top: 10px;
+       
+    }
+
 }
 
-button{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-input{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-#calcArea{
-    display: inline-flex;
-    padding-bottom: 40px;
-}
-
-h2{
-    margin-top: 0px;
-} */
